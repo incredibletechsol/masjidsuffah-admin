@@ -741,7 +741,7 @@ include('zoom.php');
    var dataTable = $('#user_data').DataTable({
     "processing" : true,
     "serverSide" : true,
-	//"bFilter": false,
+	"bFilter": false,
 	 "scrollX": true,
 		  dom: 'Bfrtip',
 			buttons: [
