@@ -97,18 +97,6 @@
             <div id="page-inner">
 			   <div class="row"> 
 				
-				<?php
-				include('conn.php');
-				$fetch_noofphotos="select count(*) mycount from tbl_gallery";	
-
-				$noofphotos_rs= mysqli_query($con,$fetch_noofphotos);
-
-					while($noofphotos_row = mysqli_fetch_array($noofphotos_rs)) 
-					{
-					$count=$noofphotos_row[0];
-					}
-				if($count < 10) {		
-				?>
 				<div class="col-md-6 col-sm-12 col-xs-12">                     
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -137,24 +125,7 @@
 						</div>
 					</div>            
 				</div> 
-				<?php
-				}
-				else {
-				?>
-				<div class="col-md-6 col-sm-12 col-xs-12">                     
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<b>Add New Photos</b>
-						</div>
-						<div class="panel-body">
-							<h3>You can upload Maximum 10 Photos.</h3>
-						</div>
-					</div>            
-				</div> 	
 				
-				<?php
-				}
-				?>
 		   </div>
 		</div>
     </div>

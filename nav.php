@@ -34,8 +34,7 @@
 			       
                     <li><a  href="news.php"><i class="fa fa-desktop fa-3x"></i> Announcements</a></li>
                   
-                    <li><a  href="gallery.php"><i class="fa fa-qrcode fa-3x"></i> Import CSV</a></li>
-                  
+                          
 					<li><a  href="logout.php"><i class="fa fa-edit fa-3x"></i> Logout</a></li>
 
                         

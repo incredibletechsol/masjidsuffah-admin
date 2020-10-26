@@ -7,18 +7,20 @@ include('zoom.php');
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title> <?php include('title.php'); ?></title>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <link href="assets/css/font-awesome.css" rel="stylesheet" />
+      <!-- BOOTSTRAP STYLES-->
+      <link href="assets/css/bootstrap.css" rel="stylesheet" />
+      <!-- FONTAWESOME STYLES-->
+      <link href="assets/css/font-awesome.css" rel="stylesheet" />
       <!-- MORRIS CHART STYLES-->
       <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-	   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-  <link href="assets/css/bootstrap.css" rel="stylesheet" />
-  <script src="plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
-  <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-  <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-   <link href="plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-  <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
-  <link href="assets/css/custom.css" rel="stylesheet" />
+      <!-- CUSTOM STYLES-->
+      <link href="assets/css/custom.css" rel="stylesheet" />
+      <!-- GOOGLE FONTS-->
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+      <!-- TABLE STYLES-->
+      <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+	  <link href="plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+	  <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
   
       <style>
          tr{
@@ -399,31 +401,71 @@ include('zoom.php');
                      </div>
                      <div class="panel-body">
                         <div class="table-responsive">
-                              <div id="alert_message"></div>
-								<table id="user_data" class="table table-bordered table-striped">
-								 <thead>
-								  <tr>
-									<th>Prayer Date</th>
-									<th>Fajr Beginning</th>
-									<th>Fajr Athan</th>
-									<th>Fajr Iqama</th>
-									<th>Thuhr Beginning</th>
-									<th>Thuhr Athan</th>
-									<th>Thuhr Iqama</th>
-									<th>Asr Beginning Shafi</th>
-									<th>Asr Beginning Hanafi</th>
-									<th>Asr Athan</th>
-									<th>Asr Iqama</th>
-									<th>Maghrib Athan</th>
-									<th>Maghrib Iqama</th>
-									<th>Isha beginning</th>
-									<th>Isha Athan</th>
-									<th>Isha Iqama</th>
-									<th>Shurooq</th>
-									<th></th>
-								  </tr>
-								 </thead>
-								</table>
+                           <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+                              <thead>
+                                 <tr>
+								    <th>Edit</th>
+                                    <th>Delete</th>
+                                    <th>Id</th>
+                                    <th>Prayer Date</th>
+                                    <th>Fajr Beginning</th>
+                                    <th>Fajr Athan</th>
+                                    <th>Fajr Iqama</th>
+                                    <th>Thuhr Beginning</th>
+                                    <th>Thuhr Athan</th>
+                                    <th>Thuhr Iqama</th>
+                                    <th>Asr Beginning Shafi</th>
+                                    <th>Asr Beginning Hanafi</th>
+                                    <th>Asr Athan</th>
+                                    <th>Asr Iqama</th>
+                                    <th>Maghrib Athan</th>
+                                    <th>Maghrib Iqama</th>
+                                    <th>Isha beginning</th>
+                                    <th>Isha Athan</th>
+                                    <th>Isha Iqama</th>
+                                    <th>Shurooq</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                 <?php
+                                    include('conn.php');
+                                    $fetch_salat_times="
+
+SELECT * from salat_times WHERE DAYOFYEAR(curdate()) 
+                                            <= dayofyear(`prayer_date`) AND DAYOFYEAR(curdate()) +25 >= dayofyear(`prayer_date`) order by MONTH(prayer_date) asc,DAY(prayer_date) asc LIMIT 90";	
+                                    
+                                    $salat_times_rs= mysqli_query($con,$fetch_salat_times);
+                                                                  $i=1;
+                                    while($salat_times_row = mysqli_fetch_array($salat_times_rs)) 
+                                    	{
+                                    	$id=$salat_times_row[0];
+                                      	echo "<tr>";
+										echo "<td><a href='salattimes.php?id=$id&msg=edit'><img src='images/edit.png'></a></td>";
+                                    	echo "<td><a href='salattimeactions.php?id=$id&msg=delete'><img src='images/cross.png'></a></td>";
+                                        echo "<td><input type='hidden' name='id' value='$id'>$i</td>";
+                                    	echo "<td>".$salat_times_row[1]."</td>";
+                                    	echo "<td>".$salat_times_row[2]."</td>";
+                                    	echo "<td>".$salat_times_row[3]."</td>";
+                                    	echo "<td>".$salat_times_row[4]."</td>";
+                                    	echo "<td>".$salat_times_row[5]."</td>";
+                                    	echo "<td>".$salat_times_row[6]."</td>";
+                                    	echo "<td>".$salat_times_row[7]."</td>";
+                                    	echo "<td>".$salat_times_row[8]."</td>";
+                                    	echo "<td>".$salat_times_row[9]."</td>";
+                                    	echo "<td>".$salat_times_row[10]."</td>";
+                                    	echo "<td>".$salat_times_row[11]."</td>";
+                                    	echo "<td>".$salat_times_row[12]."</td>";
+                                    	echo "<td>".$salat_times_row[13]."</td>";
+                                    	echo "<td>".$salat_times_row[14]."</td>";
+                                    	echo "<td>".$salat_times_row[15]."</td>";
+                                    	echo "<td>".$salat_times_row[16]."</td>";
+                                    	echo "<td>".$salat_times_row[17]."</td>";
+                                      	echo "</tr>";
+                                    	++$i;	
+                                    	} 
+                                    ?>
+                              </tbody>
+                           </table>
                         </div>
                      </div>
                   </div>
@@ -698,7 +740,18 @@ include('zoom.php');
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
 <!-- end - This is for export functionality only -->
-     
+      <script>
+         $(document).ready(function () {
+         $('#dataTables-example').dataTable({
+         "order": [[ 2, "desc" ]],
+          "scrollX": true,
+		  dom: 'Bfrtip',
+			buttons: [
+				'copy', 'csv', 'excel', 'pdf'
+			]
+         });
+         });
+      </script>
       <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
       <script type="text/javascript">
          $('.form_datetime').datetimepicker({
@@ -722,120 +775,5 @@ include('zoom.php');
          forceParse: 0
          });
       </script>
-	   <!-- start - This is for export functionality only -->
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-<!-- end - This is for export functionality only -->
-<script type="text/javascript" language="javascript" >
- $(document).ready(function(){
-  
-  fetch_data();
-
-  function fetch_data()
-  {
-   var dataTable = $('#user_data').DataTable({
-    "processing" : true,
-    "serverSide" : true,
-	//"bFilter": false,
-	 "scrollX": true,
-		  dom: 'Bfrtip',
-			buttons: [
-				'copy', 'csv', 'excel', 'pdf'
-			],
-    "order" : [],
-    "ajax" : {
-     url:"timemgmt/fetch.php",
-     type:"POST"
-    }
-   });
-  
-  }
-  
-  function update_data(id, column_name, value)
-  {
-   $.ajax({
-    url:"timemgmt/update.php",
-    method:"POST",
-    data:{id:id, column_name:column_name, value:value},
-    success:function(data)
-    {
-     $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
-     $('#user_data').DataTable().destroy();
-     fetch_data();
-    }
-   });
-   setInterval(function(){
-    $('#alert_message').html('');
-   }, 5000);
-  }
-
-  $(document).on('blur', '.update', function(){
-   var id = $(this).data("id");
-   var column_name = $(this).data("column");
-   var value = $(this).text();
-   update_data(id, column_name, value);
-  });
-  
-  $('#add').click(function(){
-   var html = '<tr>';
-   html += '<td contenteditable id="data1"></td>';
-   html += '<td contenteditable id="data2"></td>';
-   html += '<td><button type="button" name="insert" id="insert" class="btn btn-success btn-xs">Insert</button></td>';
-   html += '</tr>';
-   $('#user_data tbody').prepend(html);
-  });
-  
-  $(document).on('click', '#insert', function(){
-   var first_name = $('#data1').text();
-   var last_name = $('#data2').text();
-   if(first_name != '' && last_name != '')
-   {
-    $.ajax({
-     url:"timemgmt/insert.php",
-     method:"POST",
-     data:{first_name:first_name, last_name:last_name},
-     success:function(data)
-     {
-      $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
-      $('#user_data').DataTable().destroy();
-      fetch_data();
-     }
-    });
-    setInterval(function(){
-     $('#alert_message').html('');
-    }, 5000);
-   }
-   else
-   {
-    alert("Both Fields is required");
-   }
-  });
-  
-  $(document).on('click', '.delete', function(){
-   var id = $(this).attr("id");
-   if(confirm("Are you sure you want to remove this?"))
-   {
-    $.ajax({
-     url:"timemgmt/delete.php",
-     method:"POST",
-     data:{id:id},
-     success:function(data){
-      $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
-      $('#user_data').DataTable().destroy();
-      fetch_data();
-     }
-    });
-    setInterval(function(){
-     $('#alert_message').html('');
-    }, 5000);
-   }
-  });
- });
-</script>
    </body>
 </html>
