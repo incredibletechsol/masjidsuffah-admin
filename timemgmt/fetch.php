@@ -19,8 +19,9 @@ $columns = array('fajr_beginning',
 'isha_iqama ',
 'shurooq');
 
-$query = "SELECT * from salat_times WHERE DAYOFYEAR(curdate()) <= dayofyear(`prayer_date`) AND DAYOFYEAR(curdate()) +25 >= dayofyear(`prayer_date`) ";
+$query = "select * from salat_times where prayer_date between now() - interval 1 day and now() + interval 90 day ";
 
+/*
 
 if(isset($_POST["search"]["value"]))
 {
@@ -52,28 +53,29 @@ if(isset($_POST["order"]))
 }
 else
 {
- $query .= ' order by DAY(prayer_date) desc LIMIT 90';
+ $query .= ' order by DAY(prayer_date) desc,YEAR(prayer_date) desc ';
 }
+*/
 
-/*
 $query1 = '';
 
 if($_POST["length"] != -1)
 {
  $query1 = 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
 }
-*/
+
 
 $number_filter_row = mysqli_num_rows(mysqli_query($connect, $query));
 
-//$result = mysqli_query($connect, $query . $query1);
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($connect, $query . $query1);
+//$result = mysqli_query($connect, $query);
 
 $data = array();
 
 while($row = mysqli_fetch_array($result))
 {
 	$sub_array = array();
+	$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'">Delete</button>';
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="prayer_date">' . $row["prayer_date"] . '</div>';
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="fajr_beginning">' . $row["fajr_beginning"] . '</div>';
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="fajr_athan">' . $row["fajr_athan"] . '</div>';
@@ -91,7 +93,7 @@ while($row = mysqli_fetch_array($result))
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="isha_athan">' . $row["isha_athan"] . '</div>';
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="isha_iqama">' . $row["isha_iqama"] . '</div>';
 	$sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="shurooq">' . $row["shurooq"] . '</div>';
-	$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'">Delete</button>';
+
 	$data[] = $sub_array;
 }
 

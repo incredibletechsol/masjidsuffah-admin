@@ -64,8 +64,23 @@ include("conn.php");
 						 if($_FILES["filename"]["size"] > 0)
 						 {
 							$file = fopen($filename, "r");
+							$i=0;
 							  while (($getData = fgetcsv($file, 100000, ",")) !== FALSE)
 							   {
+							     if($i==0){
+							         $i++;
+							         continue;
+							     }
+							     
+							     for($j=1;$j<=16;$j++){
+							     if(strlen($getData[$j]) == 4){
+							         $getData[$j]="0".$getData[$j];
+							        }
+							     }       
+							  
+                            	$prayerDate = DateTime::createFromFormat('m/d/Y', $getData[0])->format('Y-m-d');	
+                      
+                                checkAlreadyExists($prayerDate);
 								 $query = "INSERT into salat_times(prayer_date,
 									fajr_beginning,
 									fajr_athan ,
@@ -83,13 +98,19 @@ include("conn.php");
 									isha_athan ,
 									isha_iqama ,
 									shurooq ) 
-									   values ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."','".$getData[4]."','".$getData[5]."','".$getData[6]."','".$getData[7]."','".$getData[8]."','".$getData[9]."','".$getData[10]."','".$getData[11]."','".$getData[12]."','".$getData[13]."','".$getData[14]."','".$getData[15]."','".$getData[16]."')";
-									   $result = mysqli_query($con, $query);
+									   values ('".$prayerDate."','".$getData[1]."','".$getData[2]."','".$getData[3]."','".$getData[4]."','".$getData[5]."','".$getData[6]."','".$getData[7]."','".$getData[8]."','".$getData[9]."','".$getData[10]."','".$getData[11]."','".$getData[12]."','".$getData[13]."','".$getData[14]."','".$getData[15]."','".$getData[16]."')";
+								 $result = mysqli_query($con, $query);
 							   }
 						  
 							   fclose($file);  
+							   
+							   
 						 }
-							?>
+						 
+						
+						?>
+							
+				
 				
 				<script type="text/javascript">
 				$(document).ready(function() {	
@@ -148,7 +169,7 @@ include("conn.php");
 					<div align="center" style="margin:5px 0 5px 0;">
 					
 						<?php 
-						echo "<p align='center'><h4><img src='images/Correct.png'>&nbsp;&nbsp;File Uploaded Successfully.</h4></p>"; 
+						echo "<p align='center'><h4><img src='images/Correct.png'>&nbsp;&nbsp;Salat Time Saved Successfully.</h4></p>"; 
 						?>
 					
 					</div>
@@ -162,5 +183,19 @@ include("conn.php");
 				<?php
 				}
 		}
+		 
+						 function checkAlreadyExists($prayerDate){
+							    include("conn.php");
+							       
+							    $fetch_existing_details_query="SELECT * FROM salat_times where prayer_date='$prayerDate'";
+                     			
+                     			$existing_details_rs= mysqli_query($con,$fetch_existing_details_query);
+                     			
+                     		    $rowcount=mysqli_num_rows($existing_details_rs);
+                     		    
+                     		    if($rowcount>0){
+                     		        mysqli_query($con, "delete from salat_times where prayer_date='$prayerDate'");
+                     		        }
+							   }
 ?>	
 

@@ -111,6 +111,15 @@
 
 		
 	</script>
+	  <style>
+      
+      .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        background-color: #e67e22 !important;
+        }
+        .btn {
+          outline-color: #e67e22 !important;
+        }
+    </style>
 </head>
 <body>
     <div id="wrapper">

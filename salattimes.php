@@ -21,6 +21,14 @@ include('zoom.php');
   <link href="assets/css/custom.css" rel="stylesheet" />
   
       <style>
+      
+      .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #e67e22 !important;
+}
+.btn {
+  outline-color: #e67e22 !important;
+}
+
          tr{
          margin-bottom:15px;
          }
@@ -177,39 +185,39 @@ include('zoom.php');
 									$isha_iqama  = $exiting_details_row[16];  
 									$shurooq = $exiting_details_row[17];  
                      		        } 			
-								if($prayerDate == '0000-00-00 00:00:00')
+								if($prayerDate == '00:00')
 									$prayerDate ='';
-								if($fajr_beginning == '0000-00-00 00:00:00')
+								if($fajr_beginning == '00:00')
 									$fajr_beginning ='';
-								if($fajr_athan == '0000-00-00 00:00:00')
+								if($fajr_athan == '00:00')
 									$fajr_athan ='';
-								if($fajr_iqama == '0000-00-00 00:00:00')
+								if($fajr_iqama == '00:00')
 									$fajr_iqama ='';
-								if($thuhr_beginning == '0000-00-00 00:00:00')
+								if($thuhr_beginning == '00:00')
 									$thuhr_beginning ='';
-								if($thuhr_athan == '0000-00-00 00:00:00')
+								if($thuhr_athan == '00:00')
 									$thuhr_athan ='';
-								if($thuhr_iqama == '0000-00-00 00:00:00')
+								if($thuhr_iqama == '00:00')
 									$thuhr_iqama ='';
-								if($asr_beginning_shafi == '0000-00-00 00:00:00')
+								if($asr_beginning_shafi == '00:00')
 									$asr_beginning_shafi ='';
-								if($asr_beginning_hanafi == '0000-00-00 00:00:00')
+								if($asr_beginning_hanafi == '00:00')
 									$asr_beginning_hanafi ='';
-								if($maghrib_athan == '0000-00-00 00:00:00')
+								if($maghrib_athan == '00:00')
 									$maghrib_athan ='';
-								if($asr_iqama == '0000-00-00 00:00:00')
+								if($asr_iqama == '00:00')
 									$asr_iqama ='';
-								if($asr_athan == '0000-00-00 00:00:00')
+								if($asr_athan == '00:00')
 									$asr_athan ='';
-								if($maghrib_iqama == '0000-00-00 00:00:00')
+								if($maghrib_iqama == '00:00')
 									$maghrib_iqama ='';
-								if($isha_beginning == '0000-00-00 00:00:00')
+								if($isha_beginning == '00:00')
 									$isha_beginning ='';
-								if($isha_athan == '0000-00-00 00:00:00')
+								if($isha_athan == '00:00')
 									$isha_athan ='';
-								if($isha_iqama == '0000-00-00 00:00:00')
+								if($isha_iqama == '00:00')
 									$isha_iqama ='';
-								if($shurooq == '0000-00-00 00:00:00')
+								if($shurooq == '00:00')
 									$shurooq ='';
                      			?>
                   <DIV id="ERROR1" style="color:red;font-weight:bold;"></DIV>
@@ -229,7 +237,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Fajr Begining:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_beginning">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="fajr_beginning">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $fajr_beginning; ?>" style="width:158px"  id="fajr_beginning" name="fajr_beginning"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -239,7 +247,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Fajr Athan:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="fajr_athan">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $fajr_athan; ?>" style="width:166px" id="fajr_athan"  name="fajr_athan"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -247,7 +255,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Fajr Iqama:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="fajr_iqama">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $fajr_iqama; ?>" style="width:158px"  id="fajr_iqama" name="fajr_iqama"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -257,7 +265,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Thuhr Beginning:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_beginning">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_beginning">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $thuhr_beginning; ?>" style="width:166px" id="thuhr_beginning" name="thuhr_beginning"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -265,7 +273,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Thuhr Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_athan">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $thuhr_athan; ?>" style="width:158px" id="thuhr_athan"  name="thuhr_athan"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -275,7 +283,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Thuhr Iqama:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_iqama">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $thuhr_iqama; ?>" style="width:166px" id="thuhr_iqama" name="thuhr_iqama"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -283,7 +291,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Asr Beginning Shafi:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_beginning_shafi">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_beginning_shafi">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $asr_beginning_shafi; ?>"style="width:158px" id="asr_beginning_shafi" name="asr_beginning_shafi"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -293,7 +301,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Asr Beginning Hanafi:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_beginning_hanafi">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_beginning_hanafi">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $asr_beginning_hanafi; ?>" style="width:166px" id="asr_beginning_hanafi" name="asr_beginning_hanafi"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -301,7 +309,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Asr Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_athan">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $asr_athan; ?>" style="width:158px"  id="asr_athan" name="asr_athan"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -311,7 +319,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Asr Iqama:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_iqama">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $asr_iqama; ?>" style="width:166px" id="asr_iqama" name="asr_iqama"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -319,7 +327,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Maghrib Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="maghrib_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="maghrib_athan">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $maghrib_athan; ?>" style="width:158px" id="maghrib_athan" name="maghrib_athan"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -333,7 +341,7 @@ include('zoom.php');
                             </td>
                            <td height="32" width="169" align="center"><b>*Isha Beginning:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_beginning">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_beginning">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $isha_beginning; ?>" style="width:158px" id="isha_beginning" name="isha_beginning"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -343,7 +351,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Isha Athan:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_athan">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $isha_athan; ?>" style="width:166px" id="isha_athan" name="isha_athan"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -351,7 +359,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Isha Iqama:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_iqama">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $isha_iqama; ?>" style="width:158px" id="isha_iqama" name="isha_iqama"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -361,7 +369,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Shurooq:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="shurooq">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="shurooq">
                                  <input  class="form-control" size="16" type="text" value="<?php echo $shurooq; ?>" style="width:166px" id="shurooq" name="shurooq"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -389,6 +397,9 @@ include('zoom.php');
                      <div class="panel-heading">
                         <h3>All Salat Times</h3>
                         <div align='right'>
+                           <a class="btn btn-primary btn-lg" href="export.php">
+                           Export CSV
+                           </a>
 						   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
                            Import CSV
                            </button>
@@ -403,6 +414,7 @@ include('zoom.php');
 								<table id="user_data" class="table table-bordered table-striped">
 								 <thead>
 								  <tr>
+								    <th>Delete</th>
 									<th>Prayer Date</th>
 									<th>Fajr Beginning</th>
 									<th>Fajr Athan</th>
@@ -420,7 +432,7 @@ include('zoom.php');
 									<th>Isha Athan</th>
 									<th>Isha Iqama</th>
 									<th>Shurooq</th>
-									<th></th>
+						
 								  </tr>
 								 </thead>
 								</table>
@@ -459,7 +471,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Fajr Begining:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_beginning">
+                              <div class="input-group date form_time col-md-5" data-date-format="hh:ii" data-link-field="fajr_beginning"  data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -470,7 +482,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Fajr Athan:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="fajr_athan" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -479,7 +491,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Fajr Iqama:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="fajr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="fajr_iqama" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -490,7 +502,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Thuhr Beginning:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_beginning">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_beginning" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -499,7 +511,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Thuhr Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_athan" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -510,7 +522,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Thuhr Iqama:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="thuhr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="thuhr_iqama"   data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -519,7 +531,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Asr Beginning Shafi:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_beginning_shafi">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_beginning_shafi" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -530,7 +542,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Asr Beginning Hanafi:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_beginning_hanafi">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_beginning_hanafi" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -539,7 +551,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Asr Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_athan" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -550,7 +562,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Asr Iqama:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="asr_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="asr_iqama" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -559,7 +571,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Maghrib Athan:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="maghrib_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="maghrib_athan" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -570,11 +582,11 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Maghrib Iqama:</b></td>
                            <td height="32" width="246" align="left">
-                              <input  class="form-control" size="16" type="text" style="width:250px" id="maghrib_iqama" value="" name="maghrib_iqama"//>
+                              <input  class="form-control" size="16" type="text" style="width:250px" id="maghrib_iqama" value="" name="maghrib_iqama"  />
                             </td>
                            <td height="32" width="169" align="center"><b>*Isha Beginning:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_beginning">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_beginning" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -585,7 +597,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Isha Athan:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_athan">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_athan" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -594,7 +606,7 @@ include('zoom.php');
                            </td>
                            <td height="32" width="169" align="center"><b>*Isha Iqama:</b></td>
                            <td height="32" width="285" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="isha_iqama">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="isha_iqama" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:158px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -605,7 +617,7 @@ include('zoom.php');
                         <tr>
                            <td height="32" width="120"><b>*Shurooq:</b></td>
                            <td height="32" width="246" align="left">
-                              <div class="input-group date form_datetime col-md-5" data-date="" data-date-format="yyyy-mm-dd HH:ii:ss" data-link-field="shurooq">
+                              <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="shurooq" data-link-format="hh:ii">
                                  <input  class="form-control" size="16" type="text" value="" style="width:166px"/>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -651,25 +663,16 @@ include('zoom.php');
 									</td>
 								</tr>
 								<tr>
-									<td align='center' colspan="2"><a href="#" class="btn btn-primary" onClick="saveCSV();">Upload</a></td>
+									<td align='center' colspan="2"><br><a href="#" class="btn btn-primary" onClick="saveCSV();">Upload</a></td>
 								</tr>
 								
 								<tr>
-									<td height="43" width="188" align="center"><FONT face=Verdana color=#e30102 size=-2>
-									*</FONT><FONT face="Verdana, Arial, Helvetica" color=#000000 size=2>
-									Instructions</font>
-									 </td>
-									<td height="43" width="400">
-									  1) Download the sample csv attached.<a href="sample/Salat_Times.csv">Click Here</a><br>
-									  2) If you have downloaded the CSV from the Salat Times table then<br>
-									      a) Remove first row(Header Row)<br>
-										  b) Remove first 3 columns(Edit,Delete,Id)<br>
-										  Please refer below image <br>
+									
+									<td height="43" width="400"  colspan="2" align="center">
+									 <br><a href="sample/Salat_Times.csv">Click Here</a> to download the sample csv<br>
 									</td>
 								</tr>
-								<tr>
-									<td colspan="2"><a href="sample/sample.jpg" rel="lightbox1" class="effectable"><img src="sample/sample.jpg" border="0" width="575px" height="60px"></a></td>
-								</tr>
+							
 							<table>
 						</form>	
 	              </div>
@@ -721,6 +724,17 @@ include('zoom.php');
          minView: 2,
          forceParse: 0
          });
+         $('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
       </script>
 	   <!-- start - This is for export functionality only -->
 <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
@@ -742,12 +756,8 @@ include('zoom.php');
     "processing" : true,
     "serverSide" : true,
 	"bFilter": false,
-	 "scrollX": true,
-		  dom: 'Bfrtip',
-			buttons: [
-				'copy', 'csv', 'excel', 'pdf'
-			],
-    "order" : [],
+	"scrollX": true,
+	"order" : [],
     "ajax" : {
      url:"timemgmt/fetch.php",
      type:"POST"

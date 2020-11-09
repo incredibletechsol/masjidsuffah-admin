@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbName = "masjidsuffah";
+$username = "dkkkpmba_mba";
+$password = "Incr254@#$";
+$dbName = "dkkkpmba_suffahwp2";
 
 
 // Create connection

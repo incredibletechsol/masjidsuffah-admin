@@ -33,6 +33,8 @@
 			        <li><a href="salattimes.php"><i class="fa fa-dashboard fa-3x"></i> Salat Times</a></li>
 			       
                     <li><a  href="news.php"><i class="fa fa-desktop fa-3x"></i> Announcements</a></li>
+                    
+                     <li><a  href="hijri.php"><i class="fa fa-desktop fa-3x"></i> Hijri Adjustments</a></li>
                   
                           
 					<li><a  href="logout.php"><i class="fa fa-edit fa-3x"></i> Logout</a></li>
