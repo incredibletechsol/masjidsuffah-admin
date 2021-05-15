@@ -205,15 +205,14 @@
 </div>
 
 	
-         <!-- /. PAGE WRAPPER  -->
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
+     
     <script src="assets/js/bootstrap.min.js"></script>
   
+<<<<<<< HEAD
+=======
      <!-- DATA TABLE SCRIPTS -->
+>>>>>>> 2174e5b62a1bf8cc2c16a859233270829b2764f9
     <script src="assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
@@ -221,7 +220,11 @@
                 $('#dataTables-example').dataTable();
             });
     </script>
+<<<<<<< HEAD
+
+=======
          <!-- CUSTOM SCRIPTS -->
+>>>>>>> 2174e5b62a1bf8cc2c16a859233270829b2764f9
    
     
    

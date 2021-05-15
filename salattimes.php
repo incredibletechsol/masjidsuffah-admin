@@ -140,9 +140,15 @@
 			}
 		else
 			{
-			document.addPhoto.action="galleryactions.php?msg=save";
+			document.addPhoto.action="fileactions.php?msg=save";
 			document.addPhoto.submit();			
 			}
+		}
+		
+		function exportData()
+		{
+	    	document.exportDt.action="exportaction.php";
+			document.exportDt.submit();		
 		}
  	  </script>
    </head>
@@ -397,6 +403,9 @@
                      <div class="panel-heading">
                         <h3>All Salat Times</h3>
                         <div align='right'>
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+                           Export CSV Between Range 
+                           </button>
                            <a class="btn btn-primary btn-lg" href="export.php">
                            Export CSV
                            </a>
@@ -405,7 +414,8 @@
                            </button>
                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                            Add Salat Time
-                           </button>		
+                           </button>	
+                          
                         </div>
                      </div>
                      <div class="panel-body">
@@ -639,7 +649,59 @@
          </div>
       </div>
 	  
-	   <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+      
+       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-md">
+            <div class="modal-content">
+			 <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Export CSV Between Date Range</h4>
+               </div>
+                   <div class="modal-body">
+					
+						<form name="exportDt"  method="post">
+							<table>
+								
+								<tr>
+									<td height="43" width="188" align="center">
+									 From Date
+									</td>
+									<td height="43" width="400">
+									  <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="prayerFromDate" data-link-format="yyyy-mm-dd">
+                                         <input class="form-control" size="16" type="text" value="" name="prayerFromDate">
+                                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                      </div>
+                   
+									</td>
+								</tr>
+									<tr>
+									<td height="43" width="188" align="center">
+									 To Date
+									</td>
+									<td height="43" width="400">
+									  <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="prayerToDate" data-link-format="yyyy-mm-dd">
+                                         <input class="form-control" size="16" type="text" value="" name="prayerToDate">
+                                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                      </div>
+                   
+									</td>
+								</tr>
+								<tr>
+									<td align='center' colspan="2"><br><a href="#" class="btn btn-primary" onClick="exportData();">Export</a></td>
+								</tr>
+							
+							</table>
+						</form>	
+	              </div>
+            </div>
+         </div>
+      </div>
+      
+      
+         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-md">
             <div class="modal-content">
 			 <div class="modal-header">
@@ -665,15 +727,8 @@
 								<tr>
 									<td align='center' colspan="2"><br><a href="#" class="btn btn-primary" onClick="saveCSV();">Upload</a></td>
 								</tr>
-								
-								<tr>
-									
-									<td height="43" width="400"  colspan="2" align="center">
-									 <br><a href="sample/Salat_Times.csv">Click Here</a> to download the sample csv<br>
-									</td>
-								</tr>
 							
-							<table>
+							</table>
 						</form>	
 	              </div>
             </div>
